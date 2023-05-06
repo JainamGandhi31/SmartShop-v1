@@ -46,18 +46,11 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
       avatar: fileUrl,
     };
 
-    // console.log(user);
-    
-    // const newUser = await User.create(user);
-    // res.status(201).json({
-    //     success: true,
-    //     newUser //this will show returned new user is saving succeeds
-    // });
     
     // creating activation token for creating user account
     const activationToken = createActivationToken(user);
 
-    const activationUrl = `http://localhost:3000/activation/${activationToken}`;
+    const activationUrl = `https://smart-shop-v1-6qej.vercel.app/activation/${activationToken}`;
 
     try {
 
