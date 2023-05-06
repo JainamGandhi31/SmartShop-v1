@@ -12,7 +12,7 @@ app.use(cookieParser());
 // allows to send request to the backend from frontend
 app.use(
   cors({
-    origin: "https://smart-shop-v1-6qej.vercel.app/",
+    origin: "https://smartshopfrontend.vercel.app/",
     credentials: true,
   })
 );

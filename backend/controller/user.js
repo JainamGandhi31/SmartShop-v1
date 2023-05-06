@@ -50,7 +50,7 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
     // creating activation token for creating user account
     const activationToken = createActivationToken(user);
 
-    const activationUrl = `https://smart-shop-v1-6qej.vercel.app/activation/${activationToken}`;
+    const activationUrl = `https://smartshopfrontend.vercel.app/activation/${activationToken}`;
 
     try {
 
