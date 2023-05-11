@@ -44,6 +44,8 @@ const DashboardMessages = () => {
       setMessages((prev) => [...prev, arrivalMessage]);
   }, [arrivalMessage, currentChat]);
 
+
+  // getting all conversations of seller from server and setting the state 
   useEffect(() => {
     const getConversation = async () => {
       try {
@@ -95,7 +97,7 @@ const DashboardMessages = () => {
     getMessage();
   }, [currentChat]);
 
-  // create new message
+  // When a seller sends a message create new message
   const sendMessageHandler = async (e) => {
     e.preventDefault();
 
@@ -116,6 +118,8 @@ const DashboardMessages = () => {
     });
 
     try {
+
+      // if the newMessage is not empty
       if (newMessage !== "") {
         await axios
           .post(`${server}/message/create-new-message`, message)

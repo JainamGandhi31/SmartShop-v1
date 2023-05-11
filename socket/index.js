@@ -56,12 +56,15 @@ io.on("connection", (socket) => {
   // this is a map
   const messages = {}; // Object to track messages sent to each user
 
+  // receving sendMessage event from the client
   socket.on("sendMessage", ({ senderId, receiverId, text, images }) => {
     const message = createMessage({ senderId, receiverId, text, images });
 
+    //getting the user object from id
     const user = getUser(receiverId);
 
-    // Store the messages in the `messages` object
+    // Store the messages in the `messages` map, 
+
     if (!messages[receiverId]) {
       messages[receiverId] = [message];
     } else {
